@@ -1,0 +1,33 @@
+{
+	"name": "davajlama/pdf-merge",
+	"version": "1.0.0",
+	"type": "library",
+	"description": "PDF merge based on TCPDI libraries",
+	"keywords": ["PDF", "tcpdi", "tcpdi_parser", "tcpdf", "pdf-merge"],
+	"license": "Apache-2.0",
+	"authors": [
+		{
+			"name": "Nicola Asuni",
+			"email": "info@tecnick.com",
+			"homepage": "http://nicolaasuni.tecnick.com"
+		},
+		{
+			"name": "David Bittner",
+			"email": "david.bittner@seznam.cz"
+		}
+	],
+	"require": {
+		"php": ">=8.0",
+		"tecnickcom/tcpdf": "^6.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Davajlama\\": "src/Davajlama"
+		},
+		"classmap": [
+			"src/fpdf_tpl.php",
+			"src/tcpdi.php",
+			"src/tcpdi_parser.php"
+		]
+	}
+}
