@@ -22,7 +22,7 @@ final class PDFMerge
     /**
      * @var string[]
      */
-    private array $sources = [];
+    private array $contents = [];
 
     public function addFile(string $filePath): self
     {
@@ -37,18 +37,27 @@ final class PDFMerge
 
     public function addContent(string $content): self
     {
-        $this->sources[] = $content;
+        $this->contents[] = $content;
 
         return $this;
     }
 
     public function merge(string $output = self::OUTPUT_BROWSER, string $filename = 'example.pdf'): mixed
     {
+        try {
+            return $this->mergeContentsToSinglePDF($output, $filename);
+        } catch (\Throwable $throwable) {
+            throw ParseException::fromThrowable($throwable);
+        }
+    }
+
+    private function mergeContentsToSinglePDF(string $output, string $filename): mixed
+    {
         $pdf = new TCPDI();
         $pdf->setPrintHeader(false);
         $pdf->setPrintFooter(false);
 
-        foreach ($this->sources as $source) {
+        foreach ($this->contents as $source) {
             $pagesCount = $pdf->setSourceData($source);
 
             for ($page = 1; $page <= $pagesCount; $page++) {
