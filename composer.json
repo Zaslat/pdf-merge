@@ -1,6 +1,6 @@
 {
 	"name": "davajlama/pdf-merge",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "library",
 	"description": "PDF merge based on TCPDI libraries",
 	"keywords": ["PDF", "tcpdi", "tcpdi_parser", "tcpdf", "pdf-merge"],
