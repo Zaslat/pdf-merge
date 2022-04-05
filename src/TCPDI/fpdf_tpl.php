@@ -17,6 +17,8 @@
 //  limitations under the License.
 //
 
+namespace TCPDI;
+
 class FPDF_TPL extends FPDF {
     /**
      * Array of Tpl-Data

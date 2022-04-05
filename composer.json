@@ -24,10 +24,6 @@
 		"psr-4": {
 			"Davajlama\\": "src/Davajlama"
 		},
-		"classmap": [
-			"src/fpdf_tpl.php",
-			"src/tcpdi.php",
-			"src/tcpdi_parser.php"
-		]
+      "classmap": ["src/TCPDI"]
 	}
 }

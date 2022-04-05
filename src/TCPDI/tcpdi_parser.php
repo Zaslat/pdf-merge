@@ -39,6 +39,8 @@
 //
 //============================================================+
 
+namespace TCPDI;
+
 /**
  * @file
  * This is a PHP class for parsing PDF documents.<br>
@@ -47,32 +49,32 @@
  * @version 1.1
  */
 
-if (!defined ('PDF_TYPE_NULL'))
-    define ('PDF_TYPE_NULL', 0);
-if (!defined ('PDF_TYPE_NUMERIC'))
-    define ('PDF_TYPE_NUMERIC', 1);
-if (!defined ('PDF_TYPE_TOKEN'))
-    define ('PDF_TYPE_TOKEN', 2);
-if (!defined ('PDF_TYPE_HEX'))
-    define ('PDF_TYPE_HEX', 3);
-if (!defined ('PDF_TYPE_STRING'))
-    define ('PDF_TYPE_STRING', 4);
-if (!defined ('PDF_TYPE_DICTIONARY'))
-    define ('PDF_TYPE_DICTIONARY', 5);
-if (!defined ('PDF_TYPE_ARRAY'))
-    define ('PDF_TYPE_ARRAY', 6);
-if (!defined ('PDF_TYPE_OBJDEC'))
-    define ('PDF_TYPE_OBJDEC', 7);
-if (!defined ('PDF_TYPE_OBJREF'))
-    define ('PDF_TYPE_OBJREF', 8);
-if (!defined ('PDF_TYPE_OBJECT'))
-    define ('PDF_TYPE_OBJECT', 9);
-if (!defined ('PDF_TYPE_STREAM'))
-    define ('PDF_TYPE_STREAM', 10);
-if (!defined ('PDF_TYPE_BOOLEAN'))
-    define ('PDF_TYPE_BOOLEAN', 11);
-if (!defined ('PDF_TYPE_REAL'))
-    define ('PDF_TYPE_REAL', 12);
+if (!defined ('TCPDI\PDF_TYPE_NULL'))
+    define ('TCPDI\PDF_TYPE_NULL', 0);
+if (!defined ('TCPDI\PDF_TYPE_NUMERIC'))
+    define ('TCPDI\PDF_TYPE_NUMERIC', 1);
+if (!defined ('TCPDI\PDF_TYPE_TOKEN'))
+    define ('TCPDI\PDF_TYPE_TOKEN', 2);
+if (!defined ('TCPDI\PDF_TYPE_HEX'))
+    define ('TCPDI\PDF_TYPE_HEX', 3);
+if (!defined ('TCPDI\PDF_TYPE_STRING'))
+    define ('TCPDI\PDF_TYPE_STRING', 4);
+if (!defined ('TCPDI\PDF_TYPE_DICTIONARY'))
+    define ('TCPDI\PDF_TYPE_DICTIONARY', 5);
+if (!defined ('TCPDI\PDF_TYPE_ARRAY'))
+    define ('TCPDI\PDF_TYPE_ARRAY', 6);
+if (!defined ('TCPDI\PDF_TYPE_OBJDEC'))
+    define ('TCPDI\PDF_TYPE_OBJDEC', 7);
+if (!defined ('TCPDI\PDF_TYPE_OBJREF'))
+    define ('TCPDI\PDF_TYPE_OBJREF', 8);
+if (!defined ('TCPDI\PDF_TYPE_OBJECT'))
+    define ('TCPDI\PDF_TYPE_OBJECT', 9);
+if (!defined ('TCPDI\PDF_TYPE_STREAM'))
+    define ('TCPDI\PDF_TYPE_STREAM', 10);
+if (!defined ('TCPDI\PDF_TYPE_BOOLEAN'))
+    define ('TCPDI\PDF_TYPE_BOOLEAN', 11);
+if (!defined ('TCPDI\PDF_TYPE_REAL'))
+    define ('TCPDI\PDF_TYPE_REAL', 12);
 
 /**
  * @class tcpdi_parser
@@ -187,7 +189,7 @@ class tcpdi_parser {
         // get length
         $pdflen = strlen($this->pdfdata);
         // initialize class for decoding filters
-        $this->FilterDecoders = new TCPDF_FILTERS();
+        $this->FilterDecoders = new \TCPDF_FILTERS();
         // get xref and trailer data
         $this->xref = $this->getXrefData();
         $this->findObjectOffsets();
@@ -1441,7 +1443,7 @@ class tcpdi_parser {
      */
     public function Error($msg) {
         // exit program and print error
-        die("<strong>TCPDI_PARSER ERROR [{$this->uniqueid}]: </strong>".$msg);
+        throw new \Exception("TCPDI_PARSER ERROR [{$this->uniqueid}]: $msg");
     }
 
 } // END OF TCPDF_PARSER CLASS

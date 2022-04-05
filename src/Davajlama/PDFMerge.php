@@ -4,6 +4,14 @@ declare(strict_types=1);
 
 namespace Davajlama;
 
+if (!defined('K_TCPDF_EXTERNAL_CONFIG')) {
+    define('K_TCPDF_EXTERNAL_CONFIG', true);
+
+    require_once __DIR__ . '/config/config.php';
+}
+
+use TCPDI\TCPDI;
+
 final class PDFMerge
 {
     public const OUTPUT_DOWNLOAD = 'download';
@@ -36,7 +44,7 @@ final class PDFMerge
 
     public function merge(string $output = self::OUTPUT_BROWSER, string $filename = 'example.pdf'): mixed
     {
-        $pdf = new \TCPDI();
+        $pdf = new TCPDI();
         $pdf->setPrintHeader(false);
         $pdf->setPrintFooter(false);
 
