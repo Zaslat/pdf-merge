@@ -1,6 +1,6 @@
 {
 	"name": "zaslat/pdf-merge",
-	"version": "1.0.4",
+	"version": "1.0.3",
 	"type": "library",
 	"description": "PDF merge based on TCPDI libraries",
 	"keywords": ["PDF", "tcpdi", "tcpdi_parser", "tcpdf", "pdf-merge"],
