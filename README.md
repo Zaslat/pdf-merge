@@ -7,14 +7,14 @@ Installation
 ------------
 The recommended way to install PDFMerge is via Composer
 ```
-composer require davajlama/pdf-merge
+composer require zaslat/pdf-merge
 ```
 PDFMerge requires PHP version > 8.0
 
 Usage
 -----
 ```php
-use Davajlama\PDFMerge;
+use Zaslat\PDFMerge;
 
 $pdfMerge = new PDFMerge();
 $pdfMerge->addFile('file01.pdf');

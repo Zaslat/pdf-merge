@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Davajlama;
+namespace Zaslat;
 
 if (!defined('K_TCPDF_EXTERNAL_CONFIG')) {
     define('K_TCPDF_EXTERNAL_CONFIG', true);

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Davajlama;
+namespace Zaslat;
 
 final class ParseException extends \Exception
 {
